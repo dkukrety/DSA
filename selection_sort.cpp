@@ -3,6 +3,10 @@
 
 using namespace std;
 
+// Logic is to select the minimum element from the array
+// and move it to first position. Then choose 2nd min from
+// array and move it to 2nd position and so on.
+
 void selection_sort(vector<int> &arr)
 {
     // Write your code here.
