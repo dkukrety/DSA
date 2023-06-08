@@ -1,0 +1,7 @@
+1. Create a data population tool, which can create n number of directories, sub-directoies and files
+   with certain size in a defined location. Level should specified for the directories.
+
+2. Design an algo for optimizing cost of purchasing tiles( rectangular sizes), given costs and surface area.
+   {tiletype1, 20X30, 50rs}
+   {tiletype2, 40X30, 100rs}
+   {tiletype3, 50X30, 120rs}
