@@ -93,6 +93,14 @@ int main()
     vector<int> arr = {5, 6, 3, 2, 1, 9, 7, 6};
     mergeSort(arr);
 
+    /*
+        //Use stable sort alogithm as sort() uses quick sort
+        //merge sort is stable algorithm and keeps the input data
+        // in order
+        stable_sort(arr.begin(),arr.end());
+
+    */
+
     for (auto &i : arr)
     {
         cout << i << " ";
