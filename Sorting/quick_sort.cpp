@@ -108,7 +108,53 @@ void LomutoPartition(vector<int> &arr, int start, int end, int &smaller)
     }
     swap(arr[smaller], arr[pivot]);
 }
+/*
+Here we start from both end of array and compare with pivot element.
+once both smaller and bigger pointer reach a point where they are not
+lesser or bigger than pivot, we do swapping of smaller and bigger element
+*/
+void HoaresPartition(vector<int> &arr, int start, int end, int &bigger)
+{
+    int pivot = getRandomNumber(start, end - 1);
+    cout << "Pivot  " << pivot << endl;
 
+    // swap with pivot
+    swap(arr[start], arr[pivot]);
+
+    int smaller = start + 1;
+    bigger = end - 1;
+
+    while (smaller <= bigger)
+    {
+        if (arr[smaller] < arr[start])
+            smaller++;
+        else if (arr[bigger] > arr[start])
+            bigger--;
+        else
+        {
+            swap(arr[smaller], arr[bigger]);
+            smaller++;
+            bigger--;
+        }
+    }
+    swap(arr[start], arr[bigger]);
+}
+
+void quickSortHelperHoares(vector<int> &arr, int start, int end)
+{
+    if (start >= end - 1)
+        return;
+
+    // This will point to pivot element places at right position
+    // after Lomuto partition
+    int bigger = -1;
+
+    // Now use Lomuto partition
+    HoaresPartition(arr, start, end, bigger);
+
+    quickSortHelperHoares(arr, start, bigger);
+    quickSortHelperHoares(arr, bigger + 1, end);
+}
 
 void quickSortHelper(vector<int> &arr, int start, int end)
 {
@@ -130,12 +176,13 @@ void quickSort(vector<int> &arr)
 {
     // we can add logic here to detect if it is already sorted.
 
-    quickSortHelper(arr, 0, arr.size());
+    // quickSortHelper(arr, 0, arr.size());
+    quickSortHelperHoares(arr, 0, arr.size());
 }
 
 int main()
 {
-    vector<int> arr = {5, 6, 3, 2, 1, 9, 7, 6};
+    vector<int> arr = {5, 6, 3, 1, 1, 9, 7, -1};
     quickSort(arr);
     // cout << getRandomNumber(2, 2) << endl;
 
