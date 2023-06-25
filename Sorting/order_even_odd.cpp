@@ -23,10 +23,29 @@ vector<int> segregate_evens_and_odds(vector<int> &numbers)
     return numbers;
 }
 
+// Do it with using Lomutos partitioning logic
+vector<int> segregate_evens_and_odds_Lomutos(vector<int> &numbers)
+{
+    int evenIndex = -1;
+    int oddIndex = 0;
+
+    while (oddIndex < numbers.size())
+    {
+        if (numbers[oddIndex] % 2 == 0)
+        {
+            evenIndex++;
+            swap(numbers[evenIndex], numbers[oddIndex]);
+        }
+        oddIndex++;
+    }
+
+    return numbers;
+}
+
 int main()
 {
-    vector<int> arr = {1, 7, 3, 9, 5, 11 };
-    segregate_evens_and_odds(arr);
+    vector<int> arr = {1, 7, 3, 9, 2, 4, 5, 11};
+    segregate_evens_and_odds_Lomutos(arr);
 
     for (auto &i : arr)
     {

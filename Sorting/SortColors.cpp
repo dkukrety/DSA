@@ -1,0 +1,16 @@
+/*
+Three way partionting.
+
+1. Assume array has all equal element. How quick sort will behave? O(n square)
+   it will create a skew tree...
+
+now suppose array has only 3 unique numbers or colors...
+Similar to Dutchnational flag problem...
+
+goal is to 3 way partitioning in single pass....see DutchNationalFlag.cpp...or can we extend lomutos
+partioning??
+
+so 3 way paritioning is default code in quicksort algo...
+can you include in quick sort also...
+
+*/
