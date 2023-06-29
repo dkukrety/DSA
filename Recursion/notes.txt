@@ -1,0 +1,5 @@
+Recursion:
+1. Combinoterial problems or enumeration based problems.
+2. addition of numbers in array using recursion.
+3. Enumeration recursively, exhausitive enumerations...
+
