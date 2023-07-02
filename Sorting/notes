@@ -1,14 +1,21 @@
 what is sorting...
 
 --> ordering things like data or objects based on some "criteria" or "relevance"
---> it is way of data representation 
+--> it is way of data representation
 --> searching in sorted data become simple for relevant data
---> 
+-->
 -->Application
+
 1. Dictionary...searching of word...
 2. Where stablity is required?? based on two criteria....one for sorting and another for grouping...
-3. 
+3.
 
 Sorting class--> 2
+
 1. Query based Application
-2. 
+2.
+
+========================================
+
+Depending on different sorting alogirthm we studied we need find optimum algorithm
+based on problem statement....
