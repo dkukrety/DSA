@@ -3,3 +3,6 @@ Recursion:
 2. addition of numbers in array using recursion.
 3. Enumeration recursively, exhausitive enumerations...
 
+Recursion day 2:
+
+

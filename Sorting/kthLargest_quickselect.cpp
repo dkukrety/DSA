@@ -121,7 +121,7 @@ int kthLargestNumber(vector<int> &arr, int k)
     return quickSortHelper(arr, 0, arr.size(), arr.size() - k);
 }
 
-// for kth smallest number, it should be k-1 == pivot.
+// for kth smallest number, it position should be k-1 == pivot.
 int kthSmallestNumber(vector<int> &arr, int k)
 {
     return quickSortHelper(arr, 0, arr.size(), k - 1);

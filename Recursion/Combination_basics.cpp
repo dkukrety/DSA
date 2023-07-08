@@ -10,22 +10,32 @@ using namespace std;
 // choice is n-1,k-1 and n-1,k
 // need to find bug in below code..
 
-vector<vector<int>> combination(int n, int k, vector<int> slate, vector<vector<int>> &result)
+void combination_helper(int n, int k, vector<int> slate, vector<vector<int>> &result)
 {
-    if (n == k || k == 0)
+    if (k == 0)
     {
-        cout << "n=" << n << "  k=" << k << endl;
         result.push_back(slate);
-        return result;
+        return;
     }
-    else // either choose a people part of commity or do not choose
+    for (int pick = n; n > 0; n--)
     {
         // choose  and add it to slate
         slate.push_back(n);
-        combination(n - 1, k - 1, slate, result);
+        combination_helper(n - 1, k - 1, slate, result);
         slate.pop_back();
-        combination(n - 1, k, slate, result);
     }
+    return;
+}
+
+// This function print combination of n elements with size k
+// that is pick k elements from n elements and print all
+// combinations
+
+vector<vector<int>> find_combinations(int n, int k)
+{
+    vector<vector<int>> result;
+    vector<int> slate;
+    combination_helper(n, k, slate, result);
     return result;
 }
 
@@ -54,10 +64,8 @@ vector<vector<int>> combine(int n, int k) {
 
 int main()
 {
-    vector<int> slate;
-    vector<vector<int>> result;
-    combination(5, 2, slate, result);
-    for (auto i : result)
+
+    for (auto i : find_combinations(5, 2))
     {
         cout << "[";
         for (auto j : i)
