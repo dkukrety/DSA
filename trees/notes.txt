@@ -18,6 +18,25 @@ Leetcode --> binary tree level order traversal...
 =======================================
 2nd class --> DFS, pre/in/post order traversal..
 
+post order traversal is used, when we parent want to use the information mentioned in child nodes.
+pre-order and post-order are opposites?? check that...
+
+find hieght of tree using post-order technique...
+
+post-order(root)
+{
+    if(root==NULL) return 0;
+    lh = post-order(root->lh);
+    rh = post-order(root->rh);
+    return max(lh,rh)+1;
+}
+
+do traversal using iterative way for example morris traversal algorithm.
+
+for path to sum problem...use pre-order tranveral to solve that...
+
+
+
 
 
 
