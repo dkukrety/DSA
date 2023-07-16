@@ -14,7 +14,7 @@ vector<int> countingSort(vector<int> &arr)
     vector<int> aux(arr.size(), 0);
     for (auto i : arr)
     {
-        aux[i] = aux[i]++;
+        aux[i] = ++aux[i];
     }
 
     return aux;

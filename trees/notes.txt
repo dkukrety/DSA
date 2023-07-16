@@ -1,0 +1,24 @@
+Binary tree?
+complete binary tee...add all nodes from left to right...
+what is perfect binary tree?  logn
+skewed tree..? hieght is n
+tree is non-linear data structure...
+traversal tech...DFS and BFS....
+
+BFS is also called as level order traversal....
+DFS has three traversal inorder,preorder,postorder..
+=============================
+
+How to print all nodes in each level...in a tree...
+
+check when you pop from queue, while doing DFS, whenever is queue.size is 0, print new line....
+
+Leetcode --> binary tree level order traversal...
+
+=======================================
+2nd class --> DFS, pre/in/post order traversal..
+
+
+
+
+
