@@ -34,6 +34,11 @@ post-order(root)
 do traversal using iterative way for example morris traversal algorithm.
 
 for path to sum problem...use pre-order tranveral to solve that...
+calculate time and space complexity of skewed and full binary tree scenario..
+
+o(n) is tc and sc for skewed tree
+nlogn is tc and sc for full binary tree
+
 
 
 

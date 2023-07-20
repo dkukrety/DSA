@@ -156,4 +156,118 @@ public:
     }
 };
 
+// make slate passed as reference and not as value...
+class Solution
+{
+public:
+    void helper(TreeNode *root, int targetSum, vector<int> &slate, vector<vector<int>> &result)
+    {
+        if (root->val == targetSum && root->left == NULL && root->right == NULL)
+        {
+            slate.push_back(root->val);
+            result.push_back(slate);
+            slate.pop_back();
+        }
+
+        slate.push_back(root->val);
+        if (root->left)
+            helper(root->left, targetSum - root->val, slate, result);
+        // slate.pop_back();
+        // slate.push_back(root->val);
+        if (root->right)
+            helper(root->right, targetSum - root->val, slate, result);
+        slate.pop_back();
+    }
+
+    vector<vector<int>> pathSum(TreeNode *root, int targetSum)
+    {
+        vector<vector<int>> result;
+        vector<int> slate;
+        if (root == NULL)
+            return result;
+
+        helper(root, targetSum, slate, result);
+        return result;
+    }
+};
+
+// more optimized
+
+class Solution
+{
+public:
+    void helper(TreeNode *root, int targetSum, vector<int> &slate, vector<vector<int>> &result)
+    {
+        if (root == NULL)
+            return;
+
+        slate.push_back(root->val);
+
+        if (root->val == targetSum && root->left == NULL && root->right == NULL)
+        {
+            result.push_back(slate);
+            slate.pop_back();
+            return;
+        }
+
+        // slate.push_back(root->val);
+        // if(root->left)
+        helper(root->left, targetSum - root->val, slate, result);
+        // slate.pop_back();
+        // slate.push_back(root->val);
+        // if(root->right)
+        helper(root->right, targetSum - root->val, slate, result);
+        slate.pop_back();
+        return;
+    }
+
+    vector<vector<int>> pathSum(TreeNode *root, int targetSum)
+    {
+        vector<vector<int>> result;
+        vector<int> slate;
+        // if (root == NULL) return result;
+
+        helper(root, targetSum, slate, result);
+        return result;
+    }
+};
+
+// print all paths where sum == k
+
+void helper(BinaryTreeNode *root, int k, vector<int> &slate, vector<vector<int>> &result)
+{
+    if (root == NULL)
+        return;
+    slate.push_back(root->value);
+
+    if (root->value == k && root->left == NULL && root->right == NULL)
+    {
+        result.push_back(slate);
+        slate.pop_back();
+        return;
+    }
+
+    if (root->left)
+        helper(root->left, k - root->value, slate, result);
+
+    if (root->right)
+        helper(root->right, k - root->value, slate, result);
+
+    slate.pop_back();
+    return;
+}
+
+vector<vector<int>> all_paths_sum_k(BinaryTreeNode *root, int k)
+{
+    // Write your code here.
+    vector<vector<int>> result;
+    vector<int> slate;
+    helper(root, k, slate, result);
+    if (result.empty())
+    {
+        result.push_back({-1});
+    }
+    return result;
+}
+
 // https://leetcode.com/problems/path-sum-iii/description/
