@@ -1,0 +1,112 @@
+Height of n-ary tree
+
+/*
+For your reference:
+class TreeNode {
+    public:
+        int value;
+        vector<TreeNode *> children;
+
+        TreeNode(int value) {
+            this->value = value;
+        }
+};
+*/
+
+int helper(TreeNode *root)
+{
+    int maxH = -1;
+    if(root == NULL)
+        return -1;
+    
+    for(auto i: root->children)
+    {
+        int h = helper(i);
+        maxH = max(maxH,h);
+    }
+    return maxH+1;
+}
+int find_height(TreeNode *root) {
+    // Write your code here.
+    return helper(root);
+}
+
+
+
+/*
+For your reference:
+class BinaryTreeNode {
+    public:
+        int value;
+        BinaryTreeNode *left;
+        BinaryTreeNode *right;
+
+        BinaryTreeNode(int value) {
+            this->value = value;
+            this->left = nullptr;
+            this->right = nullptr;
+        }
+};
+*/
+Kth Smallest Element Of BST
+
+void helper(BinaryTreeNode *root, int &k, int &result)
+{
+    if(root == NULL) return;
+    
+    helper(root->left,k,result);
+    k = k - 1;
+    if(k == 0)
+    {
+        result = root->value;
+        return;
+    }
+    //k = k - 1;
+    helper(root->right,k,result);
+    return;
+}
+int kth_smallest_element(BinaryTreeNode *root, int k) {
+    // Write your code here
+    int result = INT_MIN;
+    helper(root, k, result);
+    return result;
+}
+
+//how to find kth largest element...do right node left traversal...
+
+void helper(BinaryTreeNode *root, int &k, int &result)
+{
+    if(root == NULL) return;
+    
+    helper(root->right,k,result);
+    k = k - 1;
+    if(k == 0)
+    {
+        result = root->value;
+        return;
+    }
+    //k = k - 1;
+    helper(root->left,k,result);
+    return;
+}
+
+convert a sorted array to a BST. //mostly follow pre-order travesal
+//find mid of sorted array and create node then do left and right
+
+Follow up: If the BST is modified often (i.e., we can do insert and delete operations) 
+and you need to find the kth smallest frequently, 
+how would you optimize? to find kth smallest element
+//so we can use Max heap to optimize...
+
+void helper(BinaryTreeNode *root, int &k, int &result)
+{
+    if(root == NULL) return;
+    
+    helper(root->right,k,result);
+    insert in max heap(priority_queue) of size k;
+    //k = k - 1;
+    helper(root->left,k,result);
+    return;
+}
+
+We can use stack also, 
