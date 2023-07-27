@@ -3,3 +3,184 @@ try solving HARD problems...
 
 solve easy problems for foundation refresher....
 
+what is graph? how it is compared to tree?
+
+disconnected components part of same graph is called forest..
+every tree is a graph, but vice versa is not true...
+edge represents a relation...
+vertex is an object which stores a data..
+
+path between or relation betweem vertex are called edges..
+cyclic graph should have atleast one cycle..
+
+
+representation of graph
+1. adj matrix: ?
+   its nothing but a matrix( 2d array). adjacent mean neighboring node...
+   it stores connection of immediate neighbours...
+   size of matrix is always n-square, where n represent nodes or vertex
+   generally values are represented as boolean...
+   circle of 1s in undirected G or division alog diagnol will happen..
+
+   T is n-square
+   S is n-square
+
+   Adv: access is easy here. like whether 1 and 3  is connected. O(1) time.
+
+2. adjancy list/ or map?
+   map<vertex/nodes>,list<vertex>>
+
+   mix of dir/undir...is called directed graph/..
+   an undirected edge 
+
+  space complexity = edges + vertices... == E+V
+  time complexity is also E+V
+
+     DisAdv: access is easy here. like whether 1 and 3  is connected. O(n) time.
+
+
+if graph is sparse?
+which DS will u use --> adj list...
+
+if graph is dense then? matrix is better, as V+E will tend to V square
+
+how can i know if graph is dense or not??
+
+general advice: always use adj list. unless interviewer tells graph is very dense...
+
+3. Edge list: [[1,3],[3,2],[2,4]]  generally a input...
+
+how to convery edgeList to Adj matrix 
+
+vector<vector<int>> matrix(5,vector<int>(5,0));
+
+when vertex is int...
+then use...
+vector<vector<int>> adjList(n);
+for(int i =0; i<edgeList.size();i++)
+{
+    a = edgeList[i][0];
+    b = edgeList[i][1];
+    adjList[a].push_back(b)
+    adjList[b].push_back(a)
+}
+
+//BFS or level order traversal(trees)
+
+for BFS, select starting node, you can start from any node...
+
+take smallest node..put all adjacent nodes in queue...
+dont put visited nodes in queue
+what does level is representing....? number of edges from starting node...
+also level represent distance or shortest distance..from starting node...
+
+so does BFS gives shortest path from starting node to destination node ??
+so levels represent shortest node from staring node to the current node...
+
+google question: a graph which was unweighted, you need to find shortest path from a node, which
+algo will you use? BFS
+
+bfs()
+{
+ //create a visited array
+ vector<bool> visited(n);
+
+ deque<int> q;
+
+ visited[1] = true;
+
+ q.push_back(1);
+
+//Always mark node visited, as soon as you visit it....
+and not when capturing it or processing it...
+
+ while(!q.empty())
+ {
+    fr = q.front()
+    q.pop_front()
+
+    for(int i=0;i<adjList[fr].size();i++)
+    {
+        int neighbour = adjList[fr][i]
+        q.push_back(adjList[fr][i]);
+        visited[adjList[fr][i]] = true;
+
+        //visited means nodes are either processed or already in Q to get processed.
+
+    }
+ }
+}
+
+//Number of connected components in graph...
+
+for(i in visited(n nodes))
+{
+    if visited(i) is false
+      do dfs(i)
+      count++
+
+    
+}
+
+Number of Islands...
+...similar to finding number of connected components...
+
+bfs(i,j)
+{
+    only explore up/down/right/left as children and if they are not visited  
+    and if they are equal to 1, the put inside q. and set visited(cell[i,j])
+    to true;
+}
+
+
+for(each cell in matric)
+{
+    checkifvisited(cell[i][k])
+    if not visited(i,j)
+      then bfs(i,j); count++;
+}
+
+//finding cycle in undirected graph.
+
+use visited + parent-child relation ship to know it is cycle//
+if(!visited[i]&& i is not parent of current node)
+//so along with visited[] have parent[] also...
+
+//Graph valid tree...
+
+basically it should not have cycle....and only one component...
+then it is a tree...
+
+in a tree number of E is always N-1 in a tree...
+
+//Graph bipartiteness...
+if graph is a tree then it is always be bipartite..also tree has not cycle...
+thers is algorithm..like 2 coloring method...this can be used to tells
+if graph is bipartite or not??
+
+keep a colour array....like parent array..use detecting cycle logic..
+
+Even cycle --> if number of nodes --> it is bipartite graph..
+
+so if graph has odd cycle then it cannot be bipartite graph. It will use coloring method to detect.
+
+//if there is cycle and if they are in different level, then its even leght cycle...
+if there is single occurance of odd cycle then it is bipartite..
+
+=======================================
+in a connected G, if degree ofevery vertex is even then there is eulerian cycle...
+
+eulerian path...start and endvertices can have odd degrees, all other vertices need to have
+even degrees
+
+if number or vertices with odd degree are 0, then there would be eulerian cycle...
+if there are 2 vertices with odd degree then there must be a eulerian path..
+
+if # of vertices in graph having odd degree is grater than 2, then there is neight eulerian path
+nor eulerian cycle..
+
+
+
+
+
+
