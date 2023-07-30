@@ -179,6 +179,19 @@ if there are 2 vertices with odd degree then there must be a eulerian path..
 if # of vertices in graph having odd degree is grater than 2, then there is neight eulerian path
 nor eulerian cycle..
 
+BFS will help yout to find shortest distance from source....explore all nodes in shortest distance..
+
+If there is odd cycle, then graph is bipartite....
+time and space complexity is V+E,
+
+detecting a cycle we use parent array....
+
+threre is difference between matrix, adjMatrix and adjList...?? think..
+if graph is already represented as matrix/grid and we can see that we need the neibours in
+out algorithm..
+
+=============================================================
+
 
 
 
