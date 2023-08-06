@@ -1,0 +1,106 @@
+
+what is DP?
+Its a optimization techinique
+1. optimize recursion time and space complexity
+2. recusrion without repetition
+3. overlapping subproblems.
+
+what is overlapping subproblems??
+--where we need to do same calculation again and again
+
+what is runtime of fib(n)
+2 to raise power n ??
+
+Memonization and Iterative approach.
+
+Memonization is like caching approach(store already calculated values)...also known as top-down approach.
+Iterative is botton - up approach.
+
+DP array which will store states of fib(n)
+DP[n] = '-1';
+
+
+fib(n)
+{
+
+if(DP[n] != -1) return DP[n]
+DP[n] ==> fib(n-1) + fib(n-2)
+return DP[n]
+}
+
+
+Approach-1
+1. Think recursion then do Memonization
+Top down approach as we break big problem into smaller problem...
+
+
+Approach-2
+2. Think recursion then do iterative..
+
+Time complexity will be o(n) as we are storing only unique states...* time to calculate it.
+Unique state is n and time is o(1), to time complexity is o(n)
+
+Find number of unique states,
+Create DP array for unique states...
+and then do Memonization...
+
+
+==============================
+
+Lets see tabular / bottom - up approach...
+It assumes that you already have  a known solution
+we are travelling from known to unknown...
+
+time complexity is o(n)
+space o(n)
+=============================
+
+count number of ways to cover a distance...or reach a stair..
+
+total n+1 uniques states...
+
+solve it by both ways...for practice...
+
+===================================
+
+Edit distance problem..
+All operation need to do be done on string1...
+
+
+helper(str1,str2, i, j, cost)
+{
+    if(str[i]!=str[j])
+    {
+        replacecost = helper(str1,str2,i+1,j+1,cost)
+        removecost = helper(str1,str2,i+1,j,cost)
+        addcost = helper(str1,str2,i,j+1,cost)
+
+
+    }
+}
+
+TC = 3^min(m,n)
+
+Index is not 0, as its a top-down approach.....we go from Unknown to Known...
+in bottom up we go from known -->  to unkown...iterative approach..
+
+number of uniq states ...is m*n...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

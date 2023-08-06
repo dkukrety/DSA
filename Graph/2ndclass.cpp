@@ -101,7 +101,7 @@ bool dfs(adjList,hashMap,visited,startnode)
         }
         else
         {
-            if(hashMap[visited])
+            if(hashMap[startnode])
             return true;
         }
 
