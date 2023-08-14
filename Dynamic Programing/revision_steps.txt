@@ -1,0 +1,16 @@
+1. Go through notes.txt
+2. solve fibo problem both recursively + table
+3. climb_stairs
+4. jump_ways
+5. choose k out of n elements problem. this probles is in recursion also.
+6. edit distance
+7. cutting rod
+1. Susbset sum problem
+2. Susbset partition problem
+3. knapsack problem
+4. coin change problem
+5. DP in matrix - min cost path
+6. Tiling problem
+7. longest palindromic subsequence..
+8. 
+

@@ -44,6 +44,11 @@ Find number of unique states,
 Create DP array for unique states...
 and then do Memonization...
 
+Basic Approach:
+To come up with recursive approach think 
+a) divide and conquer
+b) decrease and conquer
+c) All the approaches in recursion chapter...
 
 ==============================
 
@@ -79,12 +84,39 @@ helper(str1,str2, i, j, cost)
     }
 }
 
+
+
 TC = 3^min(m,n)
 
 Index is not 0, as its a top-down approach.....we go from Unknown to Known...
 in bottom up we go from known -->  to unkown...iterative approach..
 
 number of uniq states ...is m*n...
+================================
+
+CUtting rod problem..
+maximise the cost...
+
+https://www.geeksforgeeks.org/cutting-a-rod-dp-13/
+=============================
+
+DP problems practical applications like spelling corrections??
+OCRs??
+
+=====================================
+
+FOundation material , bottom up approach are discussed...
+==================
+Take care of indexes...
+and DP array size...
+=================
+LCS problem...
+https://www.geeksforgeeks.org/longest-common-subsequence-dp-4/
+
+=================
+
+longest palindromic subsequence
+
 
 
 

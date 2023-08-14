@@ -1,0 +1,55 @@
+Subset set problem...which approach?
+--include / exlude problem
+--exhaustive search?? numbers may repeat?? and we may miss numbers...
+
+so approach will be topdown and exclude/include...
+
+TC: 2^n
+SC: stack space....n
+
+Here we have 2 variables, targetSum and n, so states or nodes are combination of (index and sum)
+
+dp[n][targetSum], why we need to take targetSum...
+
+TC: n*targetSum
+SC:sum*N
+
+===========================
+
+Subset partition problem..
+add all numbers in a set...then targetSum  =  totalSum/2...
+then its same as above...
+
+=======================
+knapsack problem...
+
+maxProfit = profit_i + (i+1,W-weight[i]), 0+(i+1,W)
+
+============================
+https://www.geeksforgeeks.org/coin-change-dp-7/
+coin change...
+include/exclude...
+if i is included, i will not increment...
+if i is excludede, i will also incremented..
+tc: 2^sum
+
+dp[n][sum]
+
+min cost path...
+
+we have to explore all three paths...
+
+threee direction ,i+1,j  i+1,j+1 and i,j+1..
+https://www.geeksforgeeks.org/min-cost-path-dp-6/
+
+cost = cost + min(dp[i+1][j], dp[i+1][j+1], dp[i][j+1])
+
+===============
+https://www.geeksforgeeks.org/tiling-problem/
+
+vertically and horizontally..two ways to fill...
+
+f(n) = f(n-1) + f(n-2) ways 
+
+
+
