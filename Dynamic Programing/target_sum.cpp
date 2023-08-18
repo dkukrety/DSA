@@ -59,7 +59,7 @@ public:
 };
 
 https : // www.geeksforgeeks.org/map-count-function-in-c-stl/
-
+        // buggy code...
         class Solution
 {
 public:
@@ -77,6 +77,36 @@ public:
                 memo[{i, target}] = 0;
 
             return memo[{i, target}];
+        }
+
+        if (memo.count({i, target}))
+            return memo[{i, target}];
+
+        int positive = helper(i + 1, nums, target + nums[i]);
+        int negative = helper(i + 1, nums, target - nums[i]);
+        memo[{i, target}] = positive + negative;
+        return memo[{i, target}];
+    }
+
+    int findTargetSumWays(vector<int> &nums, int target)
+    {
+        int i = 0;
+
+        return helper(i, nums, target);
+    }
+};
+
+// correct code
+
+class Solution
+{
+public:
+    int helper(int i, vector<int> &nums, int target)
+    {
+        static map<pair<int, int>, int> memo;
+        if (i == nums.size())
+        {
+            return target == 0;
         }
 
         if (memo.count({i, target}))
