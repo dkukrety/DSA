@@ -8,6 +8,7 @@ using namespace std;
 
 // using decrease and conquer
 // using recursion
+// lazy manager technique...
 
 int helper_foraddition(vector<int> nums, int i)
 {
@@ -301,6 +302,8 @@ void genPermHelper(vector<int> nums, vector<int> &slate, int index, vector<vecto
         cout << index << "   " << pick << "  pushing " << nums[index] << endl;
         // slate.push_back(nums[pick]);
         // slate not needed as we are swapping.
+        // why we are swapping?
+        
         swap(nums[pick], nums[index]);
         genPermHelper(nums, slate, index + 1, result);
         // slate.pop_back();

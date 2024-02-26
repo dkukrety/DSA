@@ -2,6 +2,14 @@ Recursion:
 1. Combinoterial problems or enumeration based problems.
 2. addition of numbers in array using recursion.
 3. Enumeration recursively, exhausitive enumerations...
+4. Divide and conquer, decrease and conquer
+5. Solving problem by lazy managers problem.
+
+1. Choice is include/exclude
+2. Choice is uppercase/lowercase
+3. Choice is pick one from range in a loop.
+4. fill in the blanks kind of questions..
+5. 
 
 Recursion day 2:
 

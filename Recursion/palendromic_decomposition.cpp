@@ -1,7 +1,10 @@
+
+
 /*Palindromic Decomposition Of A String
 Find all palindromic decompositions of a given string s.
 
-A palindromic decomposition of string is a decomposition of the string into substrings, such that all those substrings are valid palindromes.
+A palindromic decomposition of string is a decomposition of the string into substrings,
+ such that all those substrings are valid palindromes.
 
 Example
 {

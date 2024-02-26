@@ -111,16 +111,20 @@ vector<vector<int>> genUniquePerm(vector<int> nums)
     return res;
 }
 
-void letterCombinationHelper(string str, int index, string slate, vector<string> &result, map<int, string> mp)
+void letterCombinationHelper(string str, int index, string &slate, vector<string> &result, map<int, string> mp)
 {
     if (index = str.length())
     {
         result.push_back(slate);
     }
 
-    for (int pick = index; pick < str.length(); pick++)
+    // Logic is for every blank space we have choice to select one of 3/4 letters.
+    // for example for keypad 0 we
+    for (int pick = 0; pick < mp[str[index]].length(); pick++)
     {
-        slate.push_back(str[pick]);
+        slate.push_back(mp[str[index]][pick]);
+        letterCombinationHelper(str, index+1, slate, result, mp);
+        slate.pop_back();
     }
 }
 vector<string> letterCombination(string str)

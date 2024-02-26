@@ -1,0 +1,1 @@
+“Game theory” -> recursion, dynamic programming, bit masking, backtracking, greedy, such tricks

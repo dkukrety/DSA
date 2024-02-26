@@ -11,14 +11,15 @@ using namespace std;
 
 vector<int> countingSort(vector<int> &arr)
 {
-    vector<int> aux(arr.size(), 0);
+    vector<int> aux(20, 0);
     for (auto i : arr)
     {
         aux[i] = ++aux[i];
     }
 
     return aux;
-}
+};
+
 int main()
 {
     vector<int> arr = {
@@ -38,9 +39,10 @@ int main()
 
     vector<int> aux = countingSort(arr);
 
-    for (auto i : aux)
+    for (int i = 0; i < 20; i++)
     {
-        cout << i << "   ";
+        if (aux[i])
+            cout << i << "   ";
     }
     cout << endl;
     return 0;
