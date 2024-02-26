@@ -76,11 +76,23 @@ dfs(adjList,startnode,visited)
     visited[startnode]=0;
     //use stack
     stack<int> st;
-
+    st.push(startnode);
     //explore neiboring nodes
     while(st.empty())
     {
        tp= st.top();
+       st.pop()
+
+       for(int i=0;i<adjList[tp].size();i++)
+       {
+           int nieghbour = adjList[tp][i];
+
+           if(!visited[nieghbour])
+           {
+              visited[nieghbour] = 1;
+              st.push(nieghbour);
+           }
+       }
 
     }
 }
