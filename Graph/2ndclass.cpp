@@ -57,7 +57,7 @@ dfs(adjList,startnode,visited)
     vector<int> visited(n,0);
     visited[startnode]=0;
     //recursive implementation...not stack'''
-
+    //pre-order traversal if we are printing node here
     //explore neiboring nodes
     for(niebousts: adjList)
     {
@@ -65,6 +65,8 @@ dfs(adjList,startnode,visited)
         dfs(adjlist,startnode,visited)
 
     }
+
+    //post-order traversal if we are printing node here.
 }
 
 //iterative method implementation...
