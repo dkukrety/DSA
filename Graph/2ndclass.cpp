@@ -1,3 +1,14 @@
+what is bipartite graph ? https://www.geeksforgeeks.org/what-is-bipartite-graph/
+ 1. two coloring method..
+ 2. even/odd cycle. if graph has odd lenght cycle then its bipartite.
+
+ what is logic to check cycle?
+ 1. visited and its not a parent. to check the cycle.
+ 2. number of edges are greater than vertices
+
+BFS helps in finding shortest distance from any node from source.
+BFS complexity is V+E 
+
 /*https://leetcode.com/problems/max-area-of-island/
 
 You are given an m x n binary matrix grid. An island is a group of 1's (representing land) connected 4-directionally (horizontal or vertical.) You may assume all four edges of the grid are surrounded by water.
