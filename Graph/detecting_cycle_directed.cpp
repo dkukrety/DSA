@@ -68,12 +68,15 @@ public:
 
         unordered_map<int, bool> mp;
         vector<bool> visited(numCourses, false);
-
+        
+          // we have to check for multiple components also
+        // thats why this loop is there.
         for (int i = 0; i < numCourses; i++)
         {
             if (!visited[i])
             {
                 // if directed graph has cycle then we cannot finish the course
+              
                 bool canFinish = !hasCycle(i, adjList, visited, mp);
                 if (!canFinish)
                     return false;
