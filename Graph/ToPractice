@@ -1,3 +1,4 @@
-Detecting cycle in directed/undirected graph using BFS and DFS.
+Detecting cycle in directed/undirected graph using BFS and DFS. 
+is bipartite? check...
 count island, max area of island
-topological path, shorted path, union find
+topological path, shorted path using DFS in same weight path, union find
