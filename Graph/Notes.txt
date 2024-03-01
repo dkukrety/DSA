@@ -197,7 +197,17 @@ if graph is already represented as matrix/grid and we can see that we need the n
 out algorithm..
 
 =============================================================
+Advance Graphs.
 
+Problem of Dynamic edges/connection being added.
+0. Convert edge list to graph.
+1. Do DFS/BFS
+2. Keep on counting number of components.
+
+Complexity is O(N2) but it will be very bad incase of 1000 of nodes. So we need to find better algorithm.
+
+Quick Find:
+  lets see what happens when new edges comes in.
 
 
 
